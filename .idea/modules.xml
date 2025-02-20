@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Real-World-Software-Development-Study.iml" filepath="$PROJECT_DIR$/.idea/Real-World-Software-Development-Study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP.iml" filepath="$PROJECT_DIR$/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OOP.main.iml" filepath="$PROJECT_DIR$/.idea/modules/OOP.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OOP.test.iml" filepath="$PROJECT_DIR$/.idea/modules/OOP.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/.idea/Real-World-Software-Development-Study.iml" filepath="$PROJECT_DIR$/OOP/.idea/Real-World-Software-Development-Study.iml" />
     </modules>
   </component>
 </project>
