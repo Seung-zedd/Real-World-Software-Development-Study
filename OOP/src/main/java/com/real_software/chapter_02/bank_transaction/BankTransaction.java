@@ -1,4 +1,4 @@
-package com.real_software.chapter_02;
+package com.real_software.chapter_02.bank_transaction;
 
 import java.time.LocalDate;
 import java.util.Objects;

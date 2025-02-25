@@ -1,5 +1,7 @@
 package com.real_software.chapter_02;
 
+import com.real_software.chapter_02.bank_transaction.BankTransaction;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
