@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 //* 파싱 로직을 추출해 한 클래스로 만듦
-public class BankStatementCSVParser {
+//* (Updated) 커플링을 줄이기 위해 인터페이스로 강제 구현
+public class BankStatementCSVParser implements BankStatementParser{
 
     private static final DateTimeFormatter DATE_PATTERN = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
-    private BankTransaction parseFromCSV(final String line) {
+    @Override
+    public BankTransaction parseFrom(final String line) {
         // 콤마로 구분
         final String[] columns = line.split(",");
 
@@ -22,14 +24,16 @@ public class BankStatementCSVParser {
         final String description = columns[2];
 
         return new BankTransaction(date, amount, description);
+
     }
 
-    //*
-    public List<BankTransaction> parseLinesFromCSV(final List<String> lines) {
+    @Override
+    public List<BankTransaction> parseLinesFrom(List<String> lines) {
         final List<BankTransaction> bankTransactions = new ArrayList<>();
         for (String line : lines) {
-            bankTransactions.add(parseFromCSV(line));
+            bankTransactions.add(parseFrom(line));
         }
         return bankTransactions;
+
     }
 }
