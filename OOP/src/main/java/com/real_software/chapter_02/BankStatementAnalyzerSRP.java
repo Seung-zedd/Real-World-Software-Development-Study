@@ -24,7 +24,7 @@ public class BankStatementAnalyzerSRP {
         final List<String> lines = Files.readAllLines(path);
 
         // 파싱
-        List<BankTransaction> bankTransactions = bankStatementCSVParser.parseLinesFromCSV(lines);
+        List<BankTransaction> bankTransactions = bankStatementCSVParser.parseLinesFrom(lines);
 
         // 화면으로 결과 전송
         System.out.println("The total for all transactions is " + calculateTotalAmount(bankTransactions));
