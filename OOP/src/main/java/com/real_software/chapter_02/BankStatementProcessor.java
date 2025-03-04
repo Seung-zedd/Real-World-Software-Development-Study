@@ -33,6 +33,28 @@ public class BankStatementProcessor {
         return total;
     }
 
+    public double calculateMaxInMonth(final Month month) {
+        double max = 0d;
+        for (final BankTransaction bankTransaction : bankTransactions) {
+            if (bankTransaction.getDate().getMonth() == month && bankTransaction.getAmount() > max) {
+                    max = bankTransaction.getAmount();
+                }
+
+        }
+        return max;
+    }
+
+    public double calculateMinInMonth(final Month month) {
+        double min = 0d;
+        for (final BankTransaction bankTransaction : bankTransactions) {
+            if (bankTransaction.getDate().getMonth() == month && bankTransaction.getAmount() < min) {
+                    min = bankTransaction.getAmount();
+                }
+
+        }
+        return min;
+    }
+
     public double calculateTotalForCategory(final String category) {
         double total = 0d;
         for (final BankTransaction bankTransaction : bankTransactions) {
