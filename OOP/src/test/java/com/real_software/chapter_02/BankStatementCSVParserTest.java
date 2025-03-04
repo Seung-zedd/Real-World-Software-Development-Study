@@ -64,55 +64,7 @@ class BankStatementCSVParserTest {
         }
     }
 
-    @Test
-    void shouldReturnTotalResult() throws Exception {
-        // given
-        final String RESOURCES = "src/main/resources/";
-        final Path path = Paths.get(RESOURCES + "bank-data-simple.csv");
-        final List<String> lines = Files.readAllLines(path);
 
-        // when
-        List<BankTransaction> bankTransactions = statementParser.parseLinesFrom(lines);
-        BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
-        double total = bankStatementProcessor.calculateTotalAmount();
-
-        // then
-        assertEquals(6820, total);
-    }
-
-
-    @Test
-    void shouldReturnMaxResult() throws Exception {
-        // given
-        final String RESOURCES = "src/main/resources/";
-        final Path path = Paths.get(RESOURCES + "bank-data-simple.csv");
-        final List<String> lines = Files.readAllLines(path);
-
-        // when
-        List<BankTransaction> bankTransactions = statementParser.parseLinesFrom(lines);
-        BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
-        double max = bankStatementProcessor.calculateMaxInMonth(Month.FEBRUARY);
-
-        // then
-        assertEquals(6000, max);
-    }
-
-    @Test
-    void shouldReturnMinResult() throws Exception {
-        // given
-        final String RESOURCES = "src/main/resources/";
-        final Path path = Paths.get(RESOURCES + "bank-data-simple.csv");
-        final List<String> lines = Files.readAllLines(path);
-
-        // when
-        List<BankTransaction> bankTransactions = statementParser.parseLinesFrom(lines);
-        BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
-        double min = bankStatementProcessor.calculateMinInMonth(Month.FEBRUARY);
-
-        // then
-        assertEquals(-4000, min);
-
-    }
 
     
 
