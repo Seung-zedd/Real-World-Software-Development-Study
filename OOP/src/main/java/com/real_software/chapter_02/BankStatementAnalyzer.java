@@ -26,6 +26,11 @@ public class BankStatementAnalyzer {
         // 입출력 목록을 인자로 넣어서 프로세서 객체 준비
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
+        //* 메서드 호출 부분을 람다식으로 구현
+        final List<BankTransaction> transactions = bankStatementProcessor.findTransactions(bankTransaction -> bankTransaction.getDate().getMonth() == Month.FEBRUARY &&
+                bankTransaction.getAmount() > 1000);
+
+
         collectSummary(bankStatementProcessor);
 
     }
